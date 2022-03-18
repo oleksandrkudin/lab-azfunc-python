@@ -25,11 +25,19 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: List of directory
+        run:
+          ls -lh
 
       - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
+          
+      - name: List of directory after python env
+        run:
+          ls -lh
 
       - name: Install dependencies
         run: pip install -r requirements.txt
